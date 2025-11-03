@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAC Quiz Application</title>
+  <link rel="icon" href="./favicon.png">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+  <script src="./js/questions.js"></script>
+</head>
+
+<body>
+
+  <!-- ==================== SIGNUP SCREEN ==================== -->
+  <div class=" Signup d-flex">
+    <form id='signup' class="d-flex">
+    <h1>SIGN UP</h1>
+    <input type="Name" name="NameOFteacher" id="teacherEmailNameSignup" placeholder="Name : Muhammad Hussain Shamim">
+    <input type="email" name="emailOFteacher" id="teacherEmailSignup" placeholder="Email : hussainshamimxyz@gmai.com">
+    <select id="batch" required>
+        <option value="" disabled selected>Select Your Batch</option>
+        <option value="Batch01">Btach 01</option>
+    </select>
+    <select id="trainer" required>
+        <option value="" disabled selected>Select Your Tranier</option>
+        <option value="Muhammad Hussain Shamim">Muhammad Hussain Shamim</option>
+        <option value="Arzoo Shamim">Arzoo Shamim</option>
+    </select>
+    <input type="password" name="passwordOFteacher" id="teacherPasswordSignup" placeholder="Password : *****************">
+    <button type="submit">Sign Up</button>
+    <p>If You Have Already An Account <span class="clickToLogin">Login</span></p>
+    </form>
+  </div>
+  <!-- ==================== Login SCREEN ==================== -->
+  <div class="Login d-flex active-login">
+    <form id='login' class="d-flex">
+      <h1>Login</h1>
+    <input type="email" name="emailOFteacher" id="teacherEmailLogin" placeholder="Email : hussainshamimxyz@gmai.com">
+    <input type="password" name="passwordOFteacher" id="teacherPasswordLogin" placeholder="Password : *****************">
+    <button type="submit">Login</button>
+    <p>If You Have A Not Account <span class="clickTosignup">Sign Up</span></p>
+    </form>
+  </div>
+  <!-- ==================== Confirm SCREEN ==================== -->
+  <div class="autScreen d-flex">
+
+    <ul class="flex">
+      <li class="teacher">Teacher</li>
+      <li class="student">Student</li>
+      <li class="admin">Admin</li>
+    </ul>
+
+  </div>
+  <!-- ==================== ADMIN SCREEN ==================== -->
+  <div class="admin_screen d-flex ty">
+    <form id="adminForm" class="d-flex">
+      <h2>Set Quiz Settings</h2>
+      <input type="text" id="teacherName" placeholder="Teacher Name" required>
+      <select id="courseName" required>
+        <option value="" disabled selected>Select Course</option>
+        <option value="html">HTML</option>
+        <option value="css">Css</option>
+        <option value="javascript">JavaScript</option>
+        <option value="firebase">Firebase</option>
+      </select>
+      <input type="number" id="quizDuration" placeholder="Duration (seconds)" min="5" required>
+      <input type="number" id="quizQuestion" placeholder="Question Count" min="1" max="40" required>
+      <input type="text" id="NumberWord" placeholder="Teacher Password" required>
+      <button type="submit" id="setQuiz">Set Quiz</button>
+    </form>
+  </div>
+
+  <!-- ==================== INFO BOX ==================== -->
+  <div class="info_box">
+    <div class="info-title"><span>Rules of this Quiz</span></div>
+    <div class="info-list">
+      <div class="info">1. You will have <span id="infoSeconds"></span> seconds per question.</div>
+      <div class="info">2. Once you select an answer, it can't be undone.</div>
+      <div class="info">3. You can't select any option once time goes off.</div>
+      <div class="info">4. You can't exit while playing.</div>
+      <div class="info">5. Points = correct answers.</div>
+    </div>
+    <div class="buttons">
+      <button class="quit">Exit Quiz</button>
+      <button class="restart">Continue</button>
+    </div>
+  </div>
+
+  <!-- ==================== QUIZ BOX ==================== -->
+  <div class="quiz_box">
+    <header>
+      <div class="title">Quiz Application</div>
+      <div class="timer">
+        <div class="time_left_txt">Time Left</div>
+        <div class="timer_sec">00</div>
+      </div>
+      <div class="time_line"></div>
+    </header>
+    <section>
+      <div class="que_text"></div>
+      <div class="option_list"></div>
+    </section>
+    <footer>
+      <div class="total_que"></div>
+      <button class="next_btn">Next Question</button>
+    </footer>
+  </div>
+
+  <!-- ==================== RESULT BOX ==================== -->
+  <div class="result_box">
+    <div class="icon"><i class="fas fa-crown"></i></div>
+    <div class="complete_text">You've completed the Quiz!</div>
+    <div class="score_text"></div>
+    <div class="buttons">
+      <button class="restart">Replay Quiz</button>
+      <button class="quit">Quit Quiz</button>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
